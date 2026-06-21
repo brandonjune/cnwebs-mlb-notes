@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mlb · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.7;
+            color: #1e1e1e;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 1rem 0 3rem;
+        }
+
+        /* 极简标题系统 */
+        .site-header {
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid #e4e4e4;
+            padding-bottom: 0.6rem;
+        }
+
+        .site-header h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1e1e1e;
+        }
+
+        .site-header .subhead {
+            font-size: 0.9rem;
+            color: #6b6b6b;
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+
+        section {
+            margin-bottom: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.9rem;
+            color: #2a2a2a;
+            letter-spacing: 0.01em;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        a {
+            color: #1a5c9e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c9e0;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0a3c6e;
+            border-bottom: 1px solid #0a3c6e;
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: #edf2f7;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #1f3a5f;
+            margin-right: 0.3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+            transition: box-shadow 0.15s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card .card-title {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-card .card-desc {
+            font-size: 0.92rem;
+            color: #4a4a4a;
+            line-height: 1.55;
+        }
+
+        .tip-box {
+            background: #f4f7fb;
+            border-left: 3px solid #7b9ec0;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.2rem 0;
+        }
+
+        .tip-box p {
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding: 0.2rem 0;
+        }
+
+        .faq-item .faq-q {
+            font-weight: 500;
+            font-size: 0.98rem;
+            margin-bottom: 0.1rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .faq-item .faq-a {
+            font-size: 0.92rem;
+            color: #4b4b4b;
+            padding-left: 1.2rem;
+            border-left: 2px solid #dce3ec;
+            margin-top: 0.1rem;
+        }
+
+        .footer-note {
+            border-top: 1px solid #e2e2e2;
+            padding-top: 1.4rem;
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #6e6e6e;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .inline-link-highlight {
+            background: #eef4fa;
+            padding: 0 0.2rem;
+            border-radius: 2px;
+        }
+
+        @media (min-width: 500px) {
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 3rem 1.5rem;
+            }
+            .page-wrapper {
+                padding: 0.5rem 0 4rem;
+            }
+            .site-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="site-header">
+        <h1>mlb · 简明指南与访问提醒</h1>
+        <div class="subhead">一份基于日常使用的产品说明式摘要</div>
+    </header>
+
+    <section>
+        <p>人们时常提到 <a href="https://cnwebs-mlb.com" style="border-bottom: 1px solid #7b9ec0;">mlb</a> ，但真正理解它如何融入工作流、如何避免常见误区的人并不多。这份页面尝试用克制的篇幅，梳理它的基本面貌、核心特点，以及访问时值得留意的几件事。不堆砌术语，只求清晰。</p>
+    </section>
+
+    <section>
+        <h2>产品摘要 · 它解决什么问题</h2>
+        <p>mlb 本质上是一组面向信息整合与轻量协作的工具组合。它不追求大而全，而是专注于几个关键环节：数据结构的整理、跨平台访问的稳定性，以及对常用场景的适配。如果你曾经因为信息散落在不同位置而感到低效，或是因为工具之间切换成本太高而犹豫，mlb 试图提供一条相对直接的路径。</p>
+        <p>从实际反馈来看，多数使用者首先注意到的是它的响应速度和界面克制——没有多余弹窗或强制引导，这使得学习成本降到很低。</p>
+    </section>
+
+    <section>
+        <h2>亮点 · 三个值得关注的侧面</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-title">◈ 模块化视图</div>
+                <div class="card-desc">不必一次性接纳全部功能。你可以只开启当前需要的模块，其他保持隐藏。这种设计对新手和深度用户都友好。</div>
+            </div>
+            <div class="feature-card">
+                <div class="card-title">◈ 连接稳定性</div>
+                <div class="card-desc">在网络环境波动时，mlb 的请求重试与缓存策略试图保持会话连续性。这不是完美方案，但明显减少了工作中断次数。</div>
+            </div>
+            <div class="feature-card">
+                <div class="card-title">◈ 文档与说明</div>
+                <div class="card-desc">内置的简要指引位于界面边缘，不打扰，但当你需要解释某个字段或按钮作用时，它们就在那里。没有跳转新页面的割裂感。</div>
+            </div>
+        </div>
+        <p style="margin-top: 0.2rem; font-size: 0.92rem; color: #5a5a5a;">这些特点并非一蹴而就，而是在多个小版本迭代中逐步沉淀下来的取舍。</p>
+    </section>
+
+    <section>
+        <h2>使用建议 · 从两个常见场景开始</h2>
+        <div class="feature-card" style="margin-bottom: 1.2rem; background: #ffffff;">
+            <div class="card-title">场景 A · 日常信息归档</div>
+            <div class="card-desc">如果你每天需要处理来自不同渠道的短文本、链接或备注，可以尝试在 mlb 中创建一个「收集板」。把零散内容拖入对应区域，系统会自动提取关键字段并生成时间线。一周后你会发现，查找某条笔记的时间大幅缩短。</div>
+        </div>
+        <div class="feature-card" style="background: #ffffff;">
+            <div class="card-title">场景 B · 轻量团队同步</div>
+            <div class="card-desc">不需要复杂的权限管理，只需要一个共享链接。团队成员可以在同一个视图下添加标注，所有改动都带有时间戳和署名。适合 3-6 人的项目前期讨论。</div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #5a5a5a;">以上两个场景在官方站点 <a href="https://cnwebs-mlb.com">mlb</a> 的示例页面中有更详细的截图流程，有兴趣可以对照看看。</p>
+    </section>
+
+    <section>
+        <h2>访问提醒 · 可信但克制的说明</h2>
+        <div class="tip-box">
+            <p><strong>关于访问条件</strong>：mlb 目前主要面向桌面端浏览器 (Chrome / Edge / Firefox 较新版本)，移动端浏览器可以正常加载核心内容，部分拖拽交互建议在屏幕宽度 768px 以上使用。首次加载可能需要 2-5 秒资源初始化，请稍候。</p>
+            <p style="margin-top: 0.6rem;"><strong>关于数据隐私</strong>：服务端仅保存你主动提交的内容，不扫描本地文件或后台活动。如果你对数据存储位置有疑问，可以在对应页面底部找到简要说明。</p>
+            <p style="margin-top: 0.6rem;"><strong>关于更新节奏</strong>：功能更新通常每月 1-2 次，变更日志会以简洁条目列出，不会频繁改动界面布局。</p>
+        </div>
+        <p style="font-size: 0.9rem;">以上内容基于公开文档和实际使用体验整理，不构成任何担保或承诺。建议你在充分了解后，再决定是否将其纳入日常工作流。</p>
+    </section>
+
+    <section>
+        <h2>常见疑问 · 简答三则</h2>
+        <div class="faq-item">
+            <div class="faq-q"><span class="highlight-badge">Q1</span> mlb 是否需要安装或注册？</div>
+            <div class="faq-a">无需安装。通过浏览器访问 <a href="https://cnwebs-mlb.com">mlb</a> 即可。部分高级功能会提示创建临时身份（仅用于保存你的配置），但浏览和基础使用不需要注册。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><span class="highlight-badge">Q2</span> 如果遇到加载异常，通常是什么原因？</div>
+            <div class="faq-a">最常见的原因是网络请求被拦截 (如防火墙、浏览器插件) 或 CDN 资源暂时不可达。可以尝试切换网络或关闭广告拦截类扩展后再刷新。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><span class="highlight-badge">Q3</span> 文档中提到的“mlb 模块”可以自定义顺序吗？</div>
+            <div class="faq-a">当前版本支持拖拽调整模块位置，但暂不支持完全隐藏所有模块（至少保留一个主面板）。这个限制在计划调整中，预计未来版本会放宽。</div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">更多细节可以直接在页面上方搜索栏输入关键词，或参考社区讨论区里的用户笔记。</p>
+    </section>
+
+    <footer class="footer-note">
+        <p>这份说明基于公开信息与个人使用经验整理，内容保持克制且不夸大。如果你对某个具体功能感兴趣，不妨直接打开 <a href="https://cnwebs-mlb.com">mlb</a> 体验一下——界面本身比任何描述都更直观。页面最后更新于最近一次内容审核。</p>
+    </footer>
+</div>
+</body>
+</html>
